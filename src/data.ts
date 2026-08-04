@@ -414,6 +414,88 @@ export const projects: Project[] = [
 ]
 
 // ---------------------------------------------------------------------------
+// More projects — compact grid of additional GitHub work
+// ---------------------------------------------------------------------------
+
+export interface MoreProject {
+  id: string
+  name: string
+  description: string
+  highlight?: string
+  stack: string[]
+  github: string
+}
+
+export const moreProjects: MoreProject[] = [
+  {
+    id: 'supply-chain-analytics',
+    name: 'Supply-chain-analytics',
+    description:
+      'End-to-end analytics platform on 180K+ orders (DataCo dataset) — from raw profiling in Excel/Alteryx through Snowflake SQL and Python predictive modeling to AI-generated prescriptive recommendations.',
+    highlight:
+      'Uncovered $3.8M in loss orders, a 100%-late First Class shipping failure, and 70% customer churn risk ($35.3M revenue at stake).',
+    stack: ['Python', 'Snowflake', 'Alteryx', 'LLM (Groq)', 'Power BI'],
+    github: 'https://github.com/RakshithNarayanaswamy/Supply-chain-analytics',
+  },
+  {
+    id: 'air-traffic-landing',
+    name: 'AirTrafficLandingAnalytics',
+    description:
+      'Scala analytics system over 44.5K SFO landing records (1999–2025, 175 airlines): Akka Typed actor architecture computes 6-month moving-average baselines, forecasts landing volumes, and flags >30% anomalies.',
+    stack: ['Scala', 'Akka Typed', 'Apache Spark', 'ScalaTest'],
+    github: 'https://github.com/RakshithNarayanaswamy/AirTrafficLandingAnalytics',
+  },
+  {
+    id: 'consumer-credit',
+    name: 'Consumer-credit-analytics',
+    description:
+      'Layered analytics pipeline over Federal Reserve G.19 consumer credit data: descriptive, diagnostic, predictive, and prescriptive stages with time-series forecasting of revolving vs non-revolving credit.',
+    stack: ['Python', 'pandas', 'Time-series', 'Statistical modeling'],
+    github: 'https://github.com/RakshithNarayanaswamy/Consumer-credit-analytics',
+  },
+  {
+    id: 'healthcare-airflow',
+    name: 'healthcare-airflow-pipeline',
+    description:
+      'Streaming healthcare pipeline: patient vitals (heart rate, SpO₂, BP, alerts) flow through a Bronze → Silver → Gold Medallion lakehouse on Databricks, orchestrated by Airflow with event-driven Kafka notifications.',
+    stack: ['Databricks', 'Airflow', 'Kafka', 'Medallion Architecture'],
+    github: 'https://github.com/RakshithNarayanaswamy/healthcare-airflow-pipeline',
+  },
+  {
+    id: 'seattle-pet-license',
+    name: 'Seattle-Pet-License-Pipeline-and-Analysis',
+    description:
+      'Cloud warehouse pipeline for Seattle open pet-license data: Azure Data Factory ingestion into a Kimball star schema on SQL Server/Snowflake, powering trend, geography, and seasonality dashboards.',
+    stack: ['Azure Data Factory', 'Snowflake', 'Star schema', 'Tableau'],
+    github: 'https://github.com/RakshithNarayanaswamy/Seattle-Pet-License-Pipeline-and-Analysis',
+  },
+  {
+    id: 'kc-311',
+    name: 'KansasCity-work-Pipeline-and-analysis',
+    description:
+      'City-operations analytics for Kansas City 311 requests: Alteryx profiling into Azure SQL staging with lineage fields, SCD Type 4 dimensions (current + history), and BI answering ten business questions on response times and workload.',
+    stack: ['Azure SQL', 'Alteryx', 'SCD Type 4', 'Power BI'],
+    github: 'https://github.com/RakshithNarayanaswamy/KansasCity-work-Pipeline-and-analysis',
+  },
+  {
+    id: 'la-crime',
+    name: 'LA-Crime-Pipeline-and-Analytics',
+    description:
+      'Bronze–Silver–Gold pipeline over LA reported-crime data with dimensional warehouse modeling — analyzing how time, location, demographics, weapons, and arrest outcomes shape public-safety patterns.',
+    stack: ['Medallion Architecture', 'Dimensional modeling', 'SQL', 'BI dashboards'],
+    github: 'https://github.com/RakshithNarayanaswamy/LA-Crime-Pipeline-and-Analytics',
+  },
+  {
+    id: 'food-inspection',
+    name: 'Food-Quality-Inspection-analysis',
+    description:
+      'Multi-city food-inspection analytics (Chicago + Dallas open data): heterogeneous schemas standardized through a Medallion pipeline with SCD Type 2 history tracking and public-health BI dashboards.',
+    stack: ['Medallion Architecture', 'SCD Type 2', 'Power BI', 'Tableau'],
+    github: 'https://github.com/RakshithNarayanaswamy/Food-Quality-Inspection-analysis',
+  },
+]
+
+// ---------------------------------------------------------------------------
 // Live dashboard simulation config
 // ---------------------------------------------------------------------------
 
