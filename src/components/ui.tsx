@@ -1,33 +1,48 @@
 import type { ReactNode } from 'react'
 import clsx from 'clsx'
 
-/** Section wrapper with a terminal-style "$ command" heading. */
+/**
+ * Section wrapper with a clean heading.
+ * Charcoal & Coral pattern: default sections are charcoal with a coral
+ * heading; `variant="coral"` flips to a full-bleed coral block with a
+ * charcoal heading, so the page alternates color blocks as you scroll.
+ */
 export function Section({
   id,
-  command,
   title,
   children,
   className,
+  variant,
 }: {
   id: string
-  command: string
   title: string
   children: ReactNode
   className?: string
+  variant?: 'coral'
 }) {
+  const coral = variant === 'coral'
   return (
-    <section id={id} className={clsx('mx-auto max-w-6xl px-4 py-20 sm:px-6', className)}>
-      <div className="mb-10">
-        <p className="font-mono text-sm text-ink-faint">
-          <span className="text-accent-2">$</span> {command}
-        </p>
-        <h2 className="mt-2 font-mono text-2xl font-bold tracking-tight text-ink sm:text-3xl">
-          {title}
-        </h2>
-        <div className="mt-4 h-px w-full bg-gradient-to-r from-accent/40 via-border to-transparent" />
-      </div>
-      {children}
-    </section>
+    <div className={coral ? 'bg-accent' : undefined}>
+      <section id={id} className={clsx('mx-auto max-w-6xl px-4 py-20 sm:px-6', className)}>
+        <div className="mb-10">
+          <h2
+            className={clsx(
+              'text-2xl font-bold tracking-tight sm:text-3xl',
+              coral ? 'text-[#232a31]' : 'text-accent',
+            )}
+          >
+            {title}
+          </h2>
+          <div
+            className={clsx(
+              'mt-4 h-px w-full bg-gradient-to-r via-transparent to-transparent',
+              coral ? 'from-[#232a31]/50' : 'from-accent/50',
+            )}
+          />
+        </div>
+        {children}
+      </section>
+    </div>
   )
 }
 
@@ -42,7 +57,7 @@ export function Badge({
   return (
     <span
       className={clsx(
-        'inline-flex items-center rounded border px-2 py-0.5 font-mono text-[11px] leading-5',
+        'inline-flex items-center rounded border px-2 py-0.5 text-[11px] font-medium leading-5',
         tone === 'default' && 'border-border bg-panel-2 text-ink-dim',
         tone === 'accent' && 'border-accent/30 bg-accent/10 text-accent',
         tone === 'green' && 'border-accent-2/30 bg-accent-2/10 text-accent-2',
@@ -75,14 +90,14 @@ export function TerminalPanel({
         <span className="size-3 rounded-full bg-danger/70" />
         <span className="size-3 rounded-full bg-warn/70" />
         <span className="size-3 rounded-full bg-accent-2/70" />
-        <span className="ml-3 truncate font-mono text-xs text-ink-dim">{title}</span>
+        <span className="ml-3 truncate text-xs text-ink-dim">{title}</span>
       </div>
       {children}
     </div>
   )
 }
 
-/** Brand icons — lucide removed these, so they live here as inline SVGs. */
+/** Brand icons - lucide removed these, so they live here as inline SVGs. */
 export function GithubIcon({ className }: { className?: string }) {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
