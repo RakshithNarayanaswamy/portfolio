@@ -370,7 +370,7 @@ export function Hero() {
               <img
                 src={`${import.meta.env.BASE_URL}profile.png`}
                 alt={identity.name}
-                className="absolute bottom-0 left-1/2 w-[97%] max-w-none -translate-x-1/2"
+                className="absolute bottom-0 left-1/2 w-[106%] max-w-none -translate-x-1/2"
               />
             </div>
           </div>
