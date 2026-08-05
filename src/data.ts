@@ -200,28 +200,40 @@ export const certifications: Certification[] = [
 
 export interface Education {
   school: string
+  location: string
   degree: string
   period: string
   grade: string
   coursework: string[]
 }
 
-export const education: Education = {
-  school: 'Northeastern University',
-  degree: 'Master of Science, Computer Science',
-  period: 'Sep 2024 - May 2026',
-  grade: '3.7/4',
-  coursework: [
-    'Designing Advance Data Architectures for Business Intelligence',
-    'Data Management and Database Design',
-    'Big Data Systems Engineering',
-    'Agentic AI',
-    'Theory and Practical Applications of Generative AI',
-    'Program Structure and Algorithms',
-    'Object Oriented Programming using Java',
-    'Web Design and User Experience',
-  ],
-}
+export const education: Education[] = [
+  {
+    school: 'Northeastern University',
+    location: 'Boston, MA, USA',
+    degree: 'Master of Science, Computer Science',
+    period: 'Sep 2024 - May 2026',
+    grade: '3.7/4',
+    coursework: [
+      'Designing Advance Data Architectures for Business Intelligence',
+      'Data Management and Database Design',
+      'Big Data Systems Engineering',
+      'Agentic AI',
+      'Theory and Practical Applications of Generative AI',
+      'Program Structure and Algorithms',
+      'Object Oriented Programming using Java',
+      'Web Design and User Experience',
+    ],
+  },
+  {
+    school: 'Dr. Ambedkar Institute of Technology',
+    location: 'Bengaluru, India',
+    degree: 'Bachelor of Engineering - BE, Mechanical Engineering',
+    period: 'Sep 2018 - Aug 2022',
+    grade: '7.54/10',
+    coursework: ['Python', 'SQL', 'C++', 'Mathematics', 'Operating Systems'],
+  },
+]
 
 // ---------------------------------------------------------------------------
 // Experience
