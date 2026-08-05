@@ -230,8 +230,14 @@ export const education: Education[] = [
     location: 'Bengaluru, India',
     degree: 'Bachelor of Engineering - BE, Mechanical Engineering',
     period: 'Sep 2018 - Aug 2022',
-    grade: '7.54/10',
-    coursework: ['Python', 'SQL', 'C++', 'Mathematics', 'Operating Systems'],
+    grade: '7.5/10',
+    coursework: [
+      'Python Programming',
+      'Database Management Systems (SQL, NoSQL)',
+      'C++ Programming',
+      'Mathematics',
+      'Operating Systems',
+    ],
   },
 ]
 
