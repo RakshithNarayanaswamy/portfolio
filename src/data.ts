@@ -96,7 +96,7 @@ export const identity: Identity = {
   bio: [
     'I build data platforms where AI does the repetitive, reactive work - diagnosing failures, explaining anomalies, narrating data quality - so engineers can focus on judgment: approving fixes, designing schemas, and setting guardrails.',
     'My core thesis: AI explains, deterministic logic decides. LLMs never gate a pipeline or compute a metric in my systems - they read the outputs of deterministic checks and turn them into plain-English reports, root-cause diagnoses, and tiered remediation drafts. That boundary is the difference between a self-healing pipeline and a 2am data-corruption incident.',
-    'I hold an M.S. in Computer Science from Northeastern University (May 2026), where I built a four-project agentic data engineering portfolio spanning batch (Snowflake/dbt), micro-batch (AWS/Spark Structured Streaming), real-time streaming (Kafka/GCP), and a reusable AI governance layer for PII/PHI masking, RBAC, and audit logging.',
+    "At BOSCH I worked with logistics and manufacturing data, migrating SAP and MES sources into Azure and guiding shop-floor teams through Power BI and Tableau reports. JUSTMAC, a small B2B startup, gave me my start in data engineering, moving Sales CRM clients from legacy systems to AWS. And at Betsol, serving telecom and healthcare clients, I learned what silent drift in billing pipelines costs when nobody catches it. Different domains, same lesson: the expensive failures are the silent ones. That's what I build against.",
   ],
   targetRoles: [
     'Data Engineer',
