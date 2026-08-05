@@ -318,7 +318,7 @@ function PipelineVisualizer() {
 export function Hero() {
   return (
     <div id="top">
-      <div className="mx-auto max-w-6xl px-4 pt-16 sm:px-6 sm:pt-24">
+      <div className="relative z-10 mx-auto max-w-6xl px-4 pt-16 sm:px-6 sm:pt-24">
       {/* Headline + photo */}
       <div className="grid items-center gap-10 lg:grid-cols-[1fr_auto]">
         <div className="max-w-3xl">
@@ -370,7 +370,7 @@ export function Hero() {
               <img
                 src={`${import.meta.env.BASE_URL}profile.png`}
                 alt={identity.name}
-                className="absolute bottom-0 left-1/2 w-[106%] max-w-none -translate-x-1/2"
+                className="absolute bottom-0 left-1/2 w-[97%] max-w-none -translate-x-1/2"
               />
             </div>
           </div>
@@ -381,7 +381,7 @@ export function Hero() {
 
       {/* Coral band: charcoal cards with white text on a coral surface */}
       <div className="mt-16 bg-accent">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <div className="relative z-10 mx-auto max-w-6xl px-4 py-14 sm:px-6">
           {/* About */}
           <Reveal>
           <div className="rounded-lg bg-panel p-6 shadow-xl shadow-black/20 sm:p-8">
@@ -403,7 +403,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="flex justify-center py-10">
+      <div className="relative z-10 flex justify-center py-10">
         <a href="#experience" aria-label="Scroll to experience">
           <ArrowDown className="size-5 animate-bounce text-ink-faint" />
         </a>

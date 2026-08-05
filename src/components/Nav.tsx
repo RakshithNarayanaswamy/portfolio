@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Menu, Terminal, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { contact, identity } from '../data'
 import { StatusDot } from './ui'
 
@@ -21,7 +21,11 @@ export function Nav() {
           href="#top"
           className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-ink"
         >
-          <Terminal className="size-4 text-accent" />
+          <img
+            src={`${import.meta.env.BASE_URL}memoji.png`}
+            alt=""
+            className="size-8 rounded-full ring-1 ring-border-bright"
+          />
           RAKSHITH NARAYANASWAMY
         </a>
 

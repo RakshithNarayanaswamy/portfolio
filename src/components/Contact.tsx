@@ -57,7 +57,7 @@ export function Contact() {
       </Section>
 
       <footer className="border-t border-border">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-6 text-xs text-ink-faint sm:px-6">
+        <div className="relative z-10 mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-4 py-6 text-xs text-ink-faint sm:px-6">
           <span className="flex items-center gap-2">
             <StatusDot tone="green" />
             {identity.name} · {new Date().getFullYear()}

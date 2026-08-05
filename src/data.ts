@@ -100,11 +100,9 @@ export const identity: Identity = {
   ],
   targetRoles: [
     'Data Engineer',
-    'Data Platform Engineer',
+    'Data Analyst',
     'BI Engineer',
     'AI Engineer',
-    'Agentic AI Engineer',
-    'Gen AI Engineer',
     'Analytics Engineer',
     'Software Engineer',
   ],
@@ -131,7 +129,7 @@ export const techStack: TechCategory[] = [
     icon: Code2,
     skills: [
       { name: 'Python', logo: 'logos/python.svg', note: 'PySpark, pandas, NumPy, scikit-learn', featured: true },
-      { name: 'SQL', note: 'CTEs, window functions, query optimization', featured: true },
+      { name: 'SQL', logo: 'logos/sql.svg', note: 'CTEs, window functions, stored procedures, UDFs, subqueries', featured: true },
       { name: 'Apache Spark', logo: 'logos/apachespark.svg', note: 'Structured Streaming, 2M+ daily records', featured: true },
       { name: 'Scala', logo: 'logos/scala.svg', note: 'Akka Typed, Spark' },
       { name: 'Java', logo: 'logos/java.svg' },
@@ -249,7 +247,7 @@ export const experience: ExperienceEntry[] = [
     bullets: [
       'Supported 30+ graduate students in building and debugging scalable pipelines, guiding PySpark, SQL, schema design, and data validation across Azure, Databricks, and Snowflake, enabling students to deliver functional pipelines.',
     ],
-    stack: ['PySpark', 'SQL', 'Azure', 'Databricks', 'Snowflake'],
+    stack: ['SQL', 'Python', 'Apache Spark', 'Scala', 'Java', 'Databricks', 'Big Data Analytics', 'Big Data', 'Data Analysis', 'Data Cleaning', 'Data Management', 'Data Transformation', 'Data Loading', 'Statistical Data Analysis', 'Domain Architecture', 'Data Services', 'Excel'],
   },
   {
     id: 'betsol',
@@ -267,7 +265,7 @@ export const experience: ExperienceEntry[] = [
       'Designed and maintained weekly refreshed Power BI dashboards tracking billing cycle and network performance KPIs, delivering actionable insights to cross-functional stakeholder teams.',
       'Applied NLP and text mining on 5M+ customer transcripts and operational records, identifying recurring issue patterns across enterprise clients and reducing manual ticket categorization effort by 15%.',
     ],
-    stack: ['Azure Data Factory', 'Databricks', 'Spark Streaming', 'Kafka', 'Snowflake', 'RBAC'],
+    stack: ['Azure', 'Azure Data Factory', 'Databricks', 'Real-Time Streaming', 'Kafka', 'Snowflake', 'Spark', 'Python', 'SQL', 'Power BI', 'Tableau', 'RBAC', 'Excel'],
   },
   {
     id: 'justmac',
@@ -284,7 +282,7 @@ export const experience: ExperienceEntry[] = [
       'Built Power BI dashboards consolidating ticket status, SLA breach exposure, and resolution velocity across client accounts, replacing manual weekly reports and enabling leadership to act on service health issues.',
       'Analyzed helpdesk KPIs (MTTR, CSAT, FCR, AHT) and forecasted weekly ticket inflow using Python, presenting findings to operations leadership that supported staffing decisions and reduced SLA breach incidents by 20%.',
     ],
-    stack: ['MWAA / Airflow', 'AWS Glue', 'PySpark', 'dbt', 'Redshift', 'GitHub Actions', 'DMS'],
+    stack: ['S3', 'MWAA / Airflow', 'Athena', 'AWS Glue', 'Redshift', 'EMR', 'PySpark', 'dbt', 'CI/CD', 'GitHub Actions', 'DMS', 'Excel'],
   },
   {
     id: 'bosch',
@@ -300,7 +298,7 @@ export const experience: ExperienceEntry[] = [
       'Profiled IoT sensor data streamed into data lakes, using Python anomaly-detection scripts, translating raw machine signals into actionable maintenance insights that reduced unplanned downtime.',
       'Developed Tableau dashboards integrating production output, downtime, and maintenance records, cutting 6+ hours of weekly manual reporting and accelerating loss elimination decisions.',
     ],
-    stack: ['SQL', 'Python', 'ADLS', 'SAP/MES', 'Power BI'],
+    stack: ['Azure', 'Azure Data Factory', 'ADLS', 'SAP', 'MES', 'ERP', 'Power BI', 'Tableau', 'Python', 'SQL', 'Statistical Analysis', 'Exploratory Data Analysis', 'Big Data Analytics', 'CRM', 'GitHub', 'Data Analysis', 'Excel'],
   },
 ]
 

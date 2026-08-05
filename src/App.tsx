@@ -1,5 +1,6 @@
 import { Nav } from './components/Nav'
 import { ScrollProgress } from './components/ScrollProgress'
+import { ParticleField } from './components/ParticleField'
 import { Hero } from './components/Hero'
 import { Experience } from './components/Experience'
 import { Education } from './components/Education'
@@ -11,6 +12,7 @@ import { Contact } from './components/Contact'
 export default function App() {
   return (
     <div className="min-h-screen">
+      <ParticleField />
       <ScrollProgress />
       <Nav />
       <main>

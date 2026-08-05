@@ -23,14 +23,12 @@ function ExperienceCard({ job, defaultOpen }: { job: ExperienceEntry; defaultOpe
           aria-expanded={open}
         >
           <div className="min-w-0">
-            <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-              <h3 className="text-base font-semibold text-ink sm:text-lg">
-                {job.role} · <span className="text-accent">{job.company}</span>
-              </h3>
-              <span className="text-xs font-medium tracking-wide text-ink-faint">
-                {job.location} · {job.period}
-              </span>
-            </div>
+            <h3 className="text-base font-semibold text-ink sm:text-lg">
+              {job.role} · <span className="text-accent">{job.company}</span>
+            </h3>
+            <p className="mt-1 text-xs font-medium tracking-wide text-ink-faint">
+              {job.location} · {job.period}
+            </p>
             <div className="mt-3 flex flex-wrap gap-1.5">
               {job.stack.map((tech) => (
                 <Badge key={tech}>{tech}</Badge>

@@ -23,7 +23,7 @@ export function Section({
   const coral = variant === 'coral'
   return (
     <div className={coral ? 'bg-accent' : undefined}>
-      <section id={id} className={clsx('mx-auto max-w-6xl px-4 py-20 sm:px-6', className)}>
+      <section id={id} className={clsx('relative z-10 mx-auto max-w-6xl px-4 py-20 sm:px-6', className)}>
         <div className="mb-10">
           <h2
             className={clsx(
