@@ -5,10 +5,11 @@ import { experience, type ExperienceEntry } from '../data'
 import { Badge, Section } from './ui'
 import { Reveal } from './Reveal'
 
-function ExperienceCard({ job, defaultOpen }: { job: ExperienceEntry; defaultOpen: boolean }) {
+function ExperienceCard({ job }: { job: ExperienceEntry }) {
   // A role with no bullets yet renders as a plain header, no chevron to click.
   const expandable = job.bullets.length > 0
-  const [open, setOpen] = useState(defaultOpen && expandable)
+  // Every card starts collapsed; the visitor chooses what to open.
+  const [open, setOpen] = useState(false)
 
   const header = (
     <div className="min-w-0">
@@ -81,15 +82,12 @@ function ExperienceCard({ job, defaultOpen }: { job: ExperienceEntry; defaultOpe
 }
 
 export function Experience() {
-  // Open the newest role that actually has bullets to show.
-  const firstWithBullets = experience.find((job) => job.bullets.length > 0)?.id
-
   return (
     <Section id="experience" title="Experience">
       <div className="relative space-y-8 before:absolute before:inset-y-2 before:left-[15px] before:w-px before:bg-border sm:before:left-[19px]">
         {experience.map((job, i) => (
           <Reveal key={job.id} delay={i * 100}>
-            <ExperienceCard job={job} defaultOpen={job.id === firstWithBullets} />
+            <ExperienceCard job={job} />
           </Reveal>
         ))}
       </div>

@@ -297,7 +297,7 @@ export const experience: ExperienceEntry[] = [
   {
     id: 'justmac',
     role: 'Data Engineer',
-    company: 'JUSTMAC',
+    company: 'JUSTMAC (Freelance)',
     location: 'Bengaluru, India',
     period: '05/2023 - 01/2024',
     bullets: [
