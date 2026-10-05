@@ -6,7 +6,27 @@ import { Badge, Section } from './ui'
 import { Reveal } from './Reveal'
 
 function ExperienceCard({ job, defaultOpen }: { job: ExperienceEntry; defaultOpen: boolean }) {
-  const [open, setOpen] = useState(defaultOpen)
+  // A role with no bullets yet renders as a plain header, no chevron to click.
+  const expandable = job.bullets.length > 0
+  const [open, setOpen] = useState(defaultOpen && expandable)
+
+  const header = (
+    <div className="min-w-0">
+      <h3 className="text-base font-semibold text-ink sm:text-lg">
+        {job.role} · <span className="text-accent">{job.company}</span>
+      </h3>
+      <p className="mt-1 text-xs font-medium tracking-wide text-ink-faint">
+        {job.location} · {job.period}
+      </p>
+      {job.stack.length > 0 && (
+        <div className="mt-3 flex flex-wrap gap-1.5">
+          {job.stack.map((tech) => (
+            <Badge key={tech}>{tech}</Badge>
+          ))}
+        </div>
+      )}
+    </div>
+  )
 
   return (
     <div className="relative pl-12 sm:pl-14">
@@ -17,31 +37,23 @@ function ExperienceCard({ job, defaultOpen }: { job: ExperienceEntry; defaultOpe
 
       <div className="overflow-hidden rounded-lg border border-border bg-panel transition-colors hover:border-border-bright">
         {/* Header - always visible, toggles expansion */}
-        <button
-          onClick={() => setOpen((v) => !v)}
-          className="flex w-full items-start justify-between gap-4 p-5 text-left sm:p-6"
-          aria-expanded={open}
-        >
-          <div className="min-w-0">
-            <h3 className="text-base font-semibold text-ink sm:text-lg">
-              {job.role} · <span className="text-accent">{job.company}</span>
-            </h3>
-            <p className="mt-1 text-xs font-medium tracking-wide text-ink-faint">
-              {job.location} · {job.period}
-            </p>
-            <div className="mt-3 flex flex-wrap gap-1.5">
-              {job.stack.map((tech) => (
-                <Badge key={tech}>{tech}</Badge>
-              ))}
-            </div>
-          </div>
-          <ChevronDown
-            className={clsx(
-              'mt-1 size-5 shrink-0 text-ink-faint transition-transform',
-              open && 'rotate-180',
-            )}
-          />
-        </button>
+        {expandable ? (
+          <button
+            onClick={() => setOpen((v) => !v)}
+            className="flex w-full items-start justify-between gap-4 p-5 text-left sm:p-6"
+            aria-expanded={open}
+          >
+            {header}
+            <ChevronDown
+              className={clsx(
+                'mt-1 size-5 shrink-0 text-ink-faint transition-transform',
+                open && 'rotate-180',
+              )}
+            />
+          </button>
+        ) : (
+          <div className="p-5 sm:p-6">{header}</div>
+        )}
 
         {/* Expanded bullets - animated expand/collapse */}
         <div
@@ -69,12 +81,15 @@ function ExperienceCard({ job, defaultOpen }: { job: ExperienceEntry; defaultOpe
 }
 
 export function Experience() {
+  // Open the newest role that actually has bullets to show.
+  const firstWithBullets = experience.find((job) => job.bullets.length > 0)?.id
+
   return (
     <Section id="experience" title="Experience">
       <div className="relative space-y-8 before:absolute before:inset-y-2 before:left-[15px] before:w-px before:bg-border sm:before:left-[19px]">
         {experience.map((job, i) => (
           <Reveal key={job.id} delay={i * 100}>
-            <ExperienceCard job={job} defaultOpen={i === 0} />
+            <ExperienceCard job={job} defaultOpen={job.id === firstWithBullets} />
           </Reveal>
         ))}
       </div>

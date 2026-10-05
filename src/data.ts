@@ -257,6 +257,15 @@ export interface ExperienceEntry {
 
 export const experience: ExperienceEntry[] = [
   {
+    id: 'sena',
+    role: 'Software Data Engineer',
+    company: 'SENA (Women’s Resource App)',
+    location: 'Remote, USA',
+    period: '05/2026 - Present',
+    bullets: [],
+    stack: ['AWS', 'S3', 'DynamoDB', 'Lambda', 'CloudFront', 'Python', 'SQL', 'Dart', 'Flutter', 'Go', 'Firebase'],
+  },
+  {
     id: 'neu-ta',
     role: 'Graduate Teaching Assistant',
     company: 'Northeastern University',
@@ -305,9 +314,9 @@ export const experience: ExperienceEntry[] = [
   {
     id: 'bosch',
     role: 'Data Analyst',
-    company: 'BOSCH',
+    company: 'BOSCH Ltd',
     location: 'Bengaluru, India',
-    period: '05/2022 - 05/2023',
+    period: '05/2022 - 01/2024',
     bullets: [
       'Built ETL/ELT pipelines moving 30M+ records from SAP and MES into ADLS, cleaning raw data and using SQL to trace defective components to their source batch, enabling faster root-cause analysis.',
       'Wrote Python scripts that automated extraction and cleaning of supply-chain data and flagged components nearing run-out, cutting manual reporting effort by 30% and giving planners a 12-24 hour head start before line stoppages.',
